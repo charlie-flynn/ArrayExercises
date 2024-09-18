@@ -194,6 +194,7 @@ namespace ArrayExercises
 
         int[] PrintLowestToHighest(int[] array)
         {
+            // array to put all the variables in the other array in
             int[] lowestToHighest = new int[ints.Length];
 
 
@@ -213,8 +214,15 @@ namespace ArrayExercises
                         numberScore++;
                     }
                 }
-                // after that, subtract the score by 1 to give it a proper place in the array
+                // after that, subtract the score by 1 to give it a proper place in the array, then put it into the array
                 numberScore--;
+
+                // if the place is already occupied
+                while (lowestToHighest[numberScore] != 0)
+                {
+                    // go down until there is an unoccupied space
+                    numberScore--;
+                }
                 lowestToHighest[numberScore] = num;
 
             }
