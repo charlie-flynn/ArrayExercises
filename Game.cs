@@ -27,7 +27,6 @@ namespace ArrayExercises
         int[] ints = new int[10];
         public void Run()
         {
-
             GetValues();
             PrintArray(ints);
             PrintReverse(ints);
@@ -214,7 +213,7 @@ namespace ArrayExercises
                         numberScore++;
                     }
                 }
-                // after that, subtract the score by 1 to give it a proper place in the array, then put it into the array
+                // after that, subtract the score by 1 to give it a proper place in the array
                 numberScore--;
 
                 // if the place is already occupied
@@ -223,6 +222,8 @@ namespace ArrayExercises
                     // go down until there is an unoccupied space
                     numberScore--;
                 }
+
+                // now that all thats done, put the number into the array in the proper position
                 lowestToHighest[numberScore] = num;
 
             }
