@@ -24,9 +24,11 @@ namespace ArrayExercises
      */
     internal class Game
     {
-        int[] ints = new int[10];
+        int[] ints;
         public void Run()
         {
+            ints = GetLength(ints);
+
             GetValues();
             PrintArray(ints);
             PrintReverse(ints);
@@ -36,6 +38,33 @@ namespace ArrayExercises
             PrintLowestToHighest(ints);
         }
 
+        int[] GetLength(Array array)
+        {
+            int length = 0;
+            string input = "";
+            while (true)
+            {
+                // prompt the player to input the length of the array
+                Console.WriteLine("Input Array Length");
+                input = Console.ReadLine();
+                Console.WriteLine();
+
+                // if numbers can be parsed, 
+                if (Int32.TryParse(input, out int num))
+                {
+                    // set the right variable in the array to the input and break the loop
+                    length = num;
+                    break;
+                }
+                else
+                {
+                    // otherwise, produce an error message and prompt the player again
+                    Console.WriteLine("Error: Invalid Input!");
+                }
+            }
+
+            return new int[length];
+        }
         int[] GetValues()
         {
             // Int32.Parse()
@@ -183,6 +212,7 @@ namespace ArrayExercises
             Console.WriteLine("And here it is in reverse order!");
             for (int i = ints.Length - 1; i > -1; i--)
             {
+                // prints the integer in spot i of the array until theres no integers left
                 Console.WriteLine(ints[i]);
             }
             Console.ReadKey();
