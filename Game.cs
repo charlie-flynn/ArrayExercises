@@ -55,7 +55,7 @@ namespace ArrayExercises
                     // and if said number is more than zero
                     if (num > 0)
                     {
-                        // set the right variable in the array to the input and break the loop
+                        // set the length of the array to the input and break the loop
                         length = num;
                         break;
                     }
@@ -99,7 +99,6 @@ namespace ArrayExercises
                     }
                 }
             }
-
             Console.Clear();
             return new int[0];
         }
@@ -159,7 +158,7 @@ namespace ArrayExercises
                 // if the number is higher than every other number in the array,
                 if (numberScore == ints.Length)
                 {
-                    // declare it as the highest variable, then break out of the loop
+                    // make it the highest variable, then break out of the loop
                     highestVariable = num;
                     break;
                 }
@@ -208,7 +207,6 @@ namespace ArrayExercises
 
         int[] PrintReverse(int[] array)
         {
-
             // for loop, where i is equal to the number of spots in the array - 1
             // and decrements by 1 every cycle
             Console.WriteLine("And here it is in reverse order!");
@@ -261,7 +259,7 @@ namespace ArrayExercises
             }
 
             // and then print it out!
-            Console.WriteLine("And just for fun, heres your array sorted by lowest variable to highest! :3c");
+            Console.WriteLine("And just for fun, here's your array sorted by lowest variable to highest! :3c");
             foreach (int num in lowestToHighest)
             {
                 Console.WriteLine(num);
