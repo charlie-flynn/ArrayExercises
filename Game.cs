@@ -52,15 +52,17 @@ namespace ArrayExercises
                 // if numbers can be parsed, 
                 if (Int32.TryParse(input, out int num))
                 {
-                    // set the right variable in the array to the input and break the loop
-                    length = num;
-                    break;
+                    // and if said number is more than zero
+                    if (num > 0)
+                    {
+                        // set the right variable in the array to the input and break the loop
+                        length = num;
+                        break;
+                    }
+                    
                 }
-                else
-                {
                     // otherwise, produce an error message and prompt the player again
                     Console.WriteLine("Error: Invalid Input!");
-                }
             }
 
             return new int[length];
