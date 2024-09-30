@@ -45,24 +45,22 @@ namespace ArrayExercises
             while (true)
             {
                 // prompt the player to input the length of the array
-                Console.WriteLine("Input Array Length");
+                Console.WriteLine("Input Array Length (Max of 50)");
                 input = Console.ReadLine();
                 Console.WriteLine();
 
-                // if numbers can be parsed, 
+                // if the player inputted a number higher than 0 and lower than or equal to 50, make the length of the array equal to their input
                 if (Int32.TryParse(input, out int num))
                 {
-                    // and if said number is more than zero
-                    if (num > 0)
+                    if (num > 0 && num <= 50)
                     {
-                        // set the length of the array to the input and break the loop
                         length = num;
                         break;
                     }
                     
                 }
-                    // otherwise, produce an error message and prompt the player again
-                    Console.WriteLine("Error: Invalid Input!");
+               // otherwise, produce an error message and prompt the player again
+               Console.WriteLine("Error: Invalid Input!");
             }
 
             return new int[length];
@@ -75,26 +73,21 @@ namespace ArrayExercises
 
             string input = "";
 
-            // for loop that goes for as long as there are integers to input into the array
+            // makes the player input all of the numbers into their cool awesome array
             for (int i = 0; i < ints.Length; i++)
             {
                 while (true)
                 {
-                    // prompt the player to input the integer of the particular box in the array
                     Console.WriteLine("Input Integer #" + (i + 1));
                     input = Console.ReadLine();
-                    Console.WriteLine();
-                    
-                    // if numbers can be parsed, 
+                    Console.WriteLine(); 
                     if (Int32.TryParse(input, out int num))
                     {
-                        // set the right variable in the array to the input and break the loop
                         ints[i] = num;
                         break;
                     }
                     else
                     {
-                        // otherwise, produce an error message and prompt the player again
                         Console.WriteLine("Error: Invalid Input!");
                     }
                 }
@@ -131,8 +124,6 @@ namespace ArrayExercises
             Console.WriteLine("The sum of all of the variables in your array is " + sumOfAllVariables + "!");
             Console.ReadKey();
             Console.Clear();
-
-            // and return
             return 0;
         }
 
@@ -140,25 +131,21 @@ namespace ArrayExercises
         {
             int highestVariable = 0;
             
-            // for each variable in array ints[]
+            // for each variable in the array, give it a score based on how many numbers it's higher than
+            // if its score is equal to the amount of variables in the array, it is the highest variable
             foreach (int num in ints)
             {
-                // give that variable a "score"
                 int numberScore = 0;
-
-                // compare that variable to every single variable in the array
                 for (int i = 0; i < ints.Length; i++)
                 {
                     if (num >= ints[i])
                     {
-                        // if it is higher, increase that number's score
                         numberScore++;
                     }
                 }
-                // if the number is higher than every other number in the array,
                 if (numberScore == ints.Length)
                 {
-                    // make it the highest variable, then break out of the loop
+
                     highestVariable = num;
                     break;
                 }
@@ -207,12 +194,10 @@ namespace ArrayExercises
 
         int[] PrintReverse(int[] array)
         {
-            // for loop, where i is equal to the number of spots in the array - 1
-            // and decrements by 1 every cycle
+            // prints the array in reverse order
             Console.WriteLine("And here it is in reverse order!");
             for (int i = ints.Length - 1; i > -1; i--)
             {
-                // prints the integer in spot i of the array until theres no integers left
                 Console.WriteLine(ints[i]);
             }
             Console.ReadKey();
@@ -228,37 +213,31 @@ namespace ArrayExercises
 
 
 
-            // for each variable in array ints[]
+            // for each variable in the array, give it a score based on how many numbers it's higher than
+            // then subtract that score by 1 and put it into the array up there
             foreach (int num in ints)
             {
-                // give that variable a "score"
                 int numberScore = 0;
-
-                // compare that variable to every single variable in the array
                 for (int i = 0; i < ints.Length; i++)
                 {
                     if (num >= ints[i])
                     {
-                        // if it is higher, increase that number's score
                         numberScore++;
                     }
                 }
-                // after that, subtract the score by 1 to give it a proper place in the array
                 numberScore--;
 
-                // if the place is already occupied
+                // failsafe in case there's a bunch of the same number
                 while (lowestToHighest[numberScore] != 0)
                 {
-                    // go down until there is an unoccupied space
                     numberScore--;
                 }
 
-                // now that all thats done, put the number into the array in the proper position
                 lowestToHighest[numberScore] = num;
 
             }
 
-            // and then print it out!
+            // prints out the array sorted lowest to highest
             Console.WriteLine("And just for fun, here's your array sorted by lowest variable to highest! :3c");
             foreach (int num in lowestToHighest)
             {
