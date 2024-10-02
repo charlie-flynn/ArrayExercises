@@ -1,5 +1,12 @@
 Array Exercises for AIE.
 
+Download the program here!
+https://github.com/charlie-flynn/ArrayExercises/releases/tag/v1.0
+
+Then right-click the .ZIP, and click Extract All.
+
+Afterwards, you're good to run the executable (.exe) file that's in the folder!
+
 To input the length of the array and the integers in it, type in the number you wish to enter, then press the ENTER key.
 
 This program takes an array of any length up to 50 and does the following:
