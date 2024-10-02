@@ -1,7 +1,7 @@
 Array Exercises for AIE.
 
 Download the program here!
-https://github.com/charlie-flynn/ArrayExercises/releases/tag/v1.0
+https://github.com/charlie-flynn/ArrayExercises/releases
 
 Then right-click the .ZIP, and click Extract All.
 
