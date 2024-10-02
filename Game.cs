@@ -112,7 +112,7 @@ namespace ArrayExercises
 
         int PrintSum(int[] array)
         {
-            int sumOfAllVariables = 0;
+            double sumOfAllVariables = 0;
 
             // for each number in the array, add that number to the sum
             foreach (int num in ints)
