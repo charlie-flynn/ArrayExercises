@@ -67,10 +67,6 @@ namespace ArrayExercises
         }
         int[] GetValues()
         {
-            // Int32.Parse()
-            // ^^ that thang turns a string into an integer
-
-
             string input = "";
 
             // makes the player input all of the numbers into their cool awesome array
@@ -165,7 +161,6 @@ namespace ArrayExercises
             int lowestVariable = 0;
 
             // this is just the same thing as the highest but instead of comparing if the number is higher, compare if it's lower
-            // so i wont worry about commenting here :)
             foreach (int num in ints)
             {
                 int numberScore = 0;
@@ -211,8 +206,6 @@ namespace ArrayExercises
             // array to put all the variables in the other array in
             int[] lowestToHighest = new int[ints.Length];
 
-
-
             // for each variable in the array, give it a score based on how many numbers it's higher than
             // then subtract that score by 1 and put it into the array up there
             foreach (int num in ints)
@@ -227,14 +220,13 @@ namespace ArrayExercises
                 }
                 numberScore--;
 
-                // failsafe in case there's a bunch of the same number
+                // if the index the int is supposed to go into is occupied, go down another index
                 while (lowestToHighest[numberScore] != 0)
                 {
                     numberScore--;
                 }
 
                 lowestToHighest[numberScore] = num;
-
             }
 
             // prints out the array sorted lowest to highest
